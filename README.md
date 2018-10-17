@@ -20,8 +20,6 @@ A message board built with a ReactJS foundation.
 ## Built With
 
 * [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces
-<!-- * [sqlite3](https://www.sqlite.org/index.html) - SQL database engine -->
-<!-- * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds -->
 
 ## Contributing
 
@@ -33,12 +31,3 @@ Please read [CONTRIBUTING.md](https://github.com/maxkajiwara/lamboard/blob/maste
 * **Tim Hoang** - *Front end prototyping* -  [timh1203](https://github.com/timh1203)
 * **Michael Agard** - *Front end designer* - [michaelagard](https://github.com/michaelagard)
 * More users to follow.
-<!-- ## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details -->
-
-<!-- ## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc -->
