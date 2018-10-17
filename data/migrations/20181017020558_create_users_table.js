@@ -10,7 +10,8 @@ exports.up = function(knex, Promise) {
       .string('password', 36)
       .notNullable();
     table
-      .timestamp('signupDate').defaultTo(knex.fn.now());
+      .timestamp('signup_date')
+      .defaultTo(knex.fn.now());
   });
 };
 
