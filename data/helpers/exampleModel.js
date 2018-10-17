@@ -4,9 +4,9 @@ const knexConfig = require('../knexfile');
 const db = knex(knexConfig.development);
 
 module.exports = {
-	exampleHelper
+	getExamples
 };
 
-function exampleHelper() {
+function getExamples() {
 	return db('exampleTable');
 }
