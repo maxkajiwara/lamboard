@@ -9,7 +9,10 @@ const configureMiddleware = require('./middleware/middleware');
 
 configureMiddleware(server);
 
-// ENDPOINTS
+// ROUTES
+const exampleRoutes = require('./routes/exampleRoutes.js');
+
+server.use('/api/example', exampleRoutes);
 
 // PORT
 const port = 5000;
