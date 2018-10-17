@@ -29,10 +29,10 @@ class App extends Component {
 				<Route exact path="/" component={ExampleComponent} />
 				{/* <Route exact path="/" component={HomePage} /> */}
 				{/* <Route exact path="/:boardName" component={BoardPage} /> */}
-				{/* <Route path="/:boardName/:commentId" component={ThreadPage} /> */}
-				{/* <Route path="/profiles/:id" component={ProfilePage} /> */}
-				{/* <Route exact path="/" component={SignupPage} /> */}
-				{/* <Route exact path="/" component={LoginPage} /> */}
+				{/* <Route path="/:boardName/:threadId" component={ThreadPage} /> */}
+				{/* <Route path="/users/:id" component={ProfilePage} /> */}
+				{/* <Route exact path="/register" component={SignupPage} /> */}
+				{/* <Route exact path="/login" component={LoginPage} /> */}
 			</AppContainer>
 		);
 	}
