@@ -1,9 +1,10 @@
 // Dependencies
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'; // commented this out to stop unused error from console: "'Route' is defined but never used  no-unused-vars"
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Components
+import ExampleComponent from './ExampleComponent';
 // import Navbar from './Navbar';
 // import HomePage from './HomePage';
 // import BoardPage from './BoardPage';
@@ -14,9 +15,9 @@ import styled from 'styled-components';
 
 const AppContainer = styled.div`
 	display: flex;
-	max-width: 880px;
-	height: 100%;
-	background: #f3f3f3;
+	max-width: 1280px;
+	height: 100vh;
+	background: #c7e8f1;
 	margin: 0 auto;
 `;
 
@@ -25,7 +26,7 @@ class App extends Component {
 		return (
 			<AppContainer>
 				{/* <Navbar /> */}
-				<div>Placeholder text</div>
+				<Route exact path="/" component={ExampleComponent} />
 				{/* <Route exact path="/" component={HomePage} /> */}
 				{/* <Route exact path="/:boardName" component={BoardPage} /> */}
 				{/* <Route path="/:boardName/:commentId" component={ThreadPage} /> */}
