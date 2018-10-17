@@ -1,6 +1,6 @@
 // Dependencies
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom'; // commented this out to stop unused error from console: "'Route' is defined but never used  no-unused-vars"
 import styled from 'styled-components';
 
 // Components
