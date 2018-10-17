@@ -12,7 +12,7 @@ A message board built with a ReactJS foundation.
 
 1. Fork lamboard and `clone` to your local machine.
 1. From your console, cd into your project directory root and type `npm install` or `yarn install` to install the server dependencies.
-1. Type `yarn server` or `npm run-script server` to run the included script `nodemon server.js` from [package.json](package.json).
+1. Type `yarn start` or `npm run-script start` to run the included script `nodemon server.js` from [package.json](package.json).
 1. CD into [/lamboard/lamboard](/lamboard/lamboard).
 1. Type `yarn install` or `npm install` to install ReactJS dependencies.
 1. Type `yarn start` or `npm start` to run the developer client.
