@@ -1,6 +1,6 @@
 const express = require('express');
 
-const exampleModel = require('../data/helpers/exampleModel');
+const exampleModel = require('../models/exampleModel');
 
 const router = express.Router();
 

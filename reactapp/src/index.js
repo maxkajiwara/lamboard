@@ -12,7 +12,7 @@ import * as serviceWorker from './serviceWorker';
 // Reducers
 import rootReducer from './reducers';
 // Components
-import App from './components/App';
+import { App } from './components';
 // Styles
 import './index.css';
 
