@@ -11,9 +11,9 @@ A message board built with a ReactJS foundation.
 ### Installing a developer environment
 
 1. Fork lamboard and `clone` to your local machine.
-1. From your console, cd into your project directory root and type `npm install` or `yarn install` to install the server dependencies.
+1. From your console, cd into [/server](/server) and type `npm install` or `yarn install` to install the server dependencies.
 1. Type `yarn start` or `npm run-script start` to run the included script `nodemon server.js` from [package.json](package.json).
-1. CD into [/lamboard/lamboard](/lamboard/lamboard).
+1. CD into [/reactapp](/reactapp).
 1. Type `yarn install` or `npm install` to install ReactJS dependencies.
 1. Type `yarn start` or `npm start` to run the developer client.
 
@@ -34,20 +34,20 @@ A message board built with a ReactJS foundation.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/maxkajiwara/lamboard/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CODE_OF_CONDUCT.md](https://github.com/maxkajiwara/lamboard/blob/master/CODE_OF_CONDUCT.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ### Feature Contributions
 
 1. Visit the Trello board that you are interested in working on. Currently we have a ```Front End``` and ```Back End``` board.
-1. Pick a card from the MVP list that you would be interested in working on. 
-1. Contact Max Kajiwara to create a feature branch if a feature branch does not exist for your contribution.
+1. Pick a card from the MVP list that you would be interested in working on. Add yourself to that card and move it to the ```In Progress``` column.
+1. Create a feature branch on the ```develop``` branch if a feature branch does not exist for your contribution. Attach this branch to the card using the GitHub power-up.
 1. You will be working exclusively on the new branch created. You may invite others to contribute.
 1. If you are modifying a file from another branch during your development, please collaborate with the other developer that would be working on that feature.
 1. Please do not forget to test your feature before submitting the pull request.
-1. Once you are ready to request a pull, move your Trello card to the ```Completed (attach pull request)``` board. Link your pull request in that card.
-1. Inform Max Kajiwara that the pull request is ready for review. Two developers will review and test your submission. Open discussion is encouraged during the pull request.
-1. If the feature is bug free, the pull request will be merged, otherwise review the discussion, fix code, and commit your changes.
-1. Move the Trello card to the ```Live (merged to master)``` board.
+1. Once you are ready to request a pull, move your Trello card to the ```Pull requested``` column. Attach this pull request to the card using the GitHub power-up.
+1. Other contributors will test and review your submission. Open discussion is encouraged during the pull request.
+1. If the feature gets at least two approving reviews, the pull request will be merged, otherwise review the discussion, fix code, and commit your changes.
+1. Move the Trello card out of the ```Pull requested``` column. If you're ready to work on another feature related to the card, move it back to ```In Progress```. If you're done working on the card for now but there are still more features to do, move it back to ```To Do```. If all related tasks have been completed and merged to the ```develop``` branch, move the card to ```Completed```.
 
 ## Authors
 
