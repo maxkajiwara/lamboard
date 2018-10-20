@@ -12,8 +12,6 @@ The start of the ProfilePage component
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
-// const MockAxiosPullFrom
-
 export default class ProfilePage extends Component {
   constructor(props) {
     super(props)
