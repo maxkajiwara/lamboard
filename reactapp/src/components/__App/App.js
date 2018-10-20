@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Components
-import { ThreadPage } from '../../components';
+import { ThreadPage, ProfilePage } from '../../components';
 
 // Styling
 const AppContainer = styled.div`
@@ -19,17 +19,21 @@ class App extends Component {
 	render() {
 		return (
 			<AppContainer>
+				<Route exact path="/" component={TempApp} />
 				{/* <Navbar /> */}
-				<div className="placeholder">This is a placeholder.</div>
 				{/* <Route exact path="/" component={HomePage} /> */}
-				{/* <Route exact path="/:boardName" component={BoardPage} /> */}
-				<Route path="/:boardName/:threadId" component={ThreadPage} />
-				{/* <Route path="/users/:id" component={ProfilePage} /> */}
+				{/* <Route exact path="/boards/:boardName" component={BoardPage} /> */}
+				<Route path="/boards/:threadId" component={ThreadPage} />
+				<Route path="/users/:id" component={ProfilePage} />
 				{/* <Route exact path="/register" component={SignupPage} /> */}
 				{/* <Route exact path="/login" component={LoginPage} /> */}
 			</AppContainer>
 		);
 	}
 }
-
+const TempApp = () => { // Added component to route to exact to '/' to test styles.
+	return (
+		<div className="placeholder">This component is temporary and just a placeholder for the homepage.</div>
+	)
+}
 export default App;
