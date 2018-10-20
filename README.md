@@ -39,15 +39,20 @@ Please read [CODE_OF_CONDUCT.md](https://github.com/maxkajiwara/lamboard/blob/ma
 ### Feature Contributions
 
 1. Visit the Trello board that you are interested in working on. Currently we have a ```Front End``` and ```Back End``` board.
-1. Pick a card from the MVP list that you would be interested in working on. Add yourself to that card and move it to the ```In Progress``` column.
+1. Pick a card from the To Do list that you would be interested in working on. Add yourself to that card and move it to the ```In Progress``` column.
 1. Create a feature branch on the ```develop``` branch if a feature branch does not exist for your contribution. Attach this branch to the card using the GitHub power-up.
 1. You will be working exclusively on the new branch created. You may invite others to contribute.
 1. If you are modifying a file from another branch during your development, please collaborate with the other developer that would be working on that feature.
 1. Please do not forget to test your feature before submitting the pull request.
 1. Once you are ready to request a pull, move your Trello card to the ```Pull requested``` column. Attach this pull request to the card using the GitHub power-up.
 1. Other contributors will test and review your submission. Open discussion is encouraged during the pull request.
-1. If the feature gets at least two approving reviews, the pull request will be merged, otherwise review the discussion, fix code, and commit your changes.
-1. Move the Trello card out of the ```Pull requested``` column. If you're ready to work on another feature related to the card, move it back to ```In Progress```. If you're done working on the card for now but there are still more features to do, move it back to ```To Do```. If all related tasks have been completed and merged to the ```develop``` branch, move the card to ```Completed```.
+1. If the feature gets at least two approving reviews, the pull request will be merged; otherwise review the discussion, fix code, and commit your changes.
+1. Move the Trello card out of the ```Pull requested``` column. If you're ready to work on another feature related to the card, move it back to ```In Progress```. If you're done working on the card but there are still more features to do, move it back to ```To Do```. If all related tasks have been completed and merged to the ```develop``` branch, move the card to ```Completed```.
+
+- _branch name format:_
+`feature/description`, `bugfix/description`
+- _examples:_
+`feature/registration-actions`, `bugfix/fix-infite-loop`
 
 ## Authors
 
