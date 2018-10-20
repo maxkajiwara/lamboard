@@ -47,7 +47,7 @@ Please read [CODE_OF_CONDUCT.md](https://github.com/maxkajiwara/lamboard/blob/ma
 1. Once you are ready to request a pull, move your Trello card to the ```Pull requested``` column. Attach this pull request to the card using the GitHub power-up.
 1. Other contributors will test and review your submission. Open discussion is encouraged during the pull request.
 1. If the feature gets at least two approving reviews, the pull request will be merged; otherwise review the discussion, fix code, and commit your changes.
-1. Move the Trello card out of the ```Pull requested``` column. If you're ready to work on another feature related to the card, move it back to ```In Progress```. If you're done working on the card but there are still more features to do, move it back to ```To Do```. If all related tasks have been completed and merged to the ```develop``` branch, move the card to ```Completed```.
+1. Move the Trello card out of the ```Pull requested``` column. If you're ready to work on another feature related to the card, move it back to ```In Progress```. If you're done working on the card but there are still more features to work on, move it back to ```To Do```. If all related tasks have been completed and merged to the ```develop``` branch, move the card to ```Completed```.
 
 - _branch name format:_
 `feature/description`, `bugfix/description`
