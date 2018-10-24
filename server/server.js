@@ -1,18 +1,18 @@
 // DEPENDENCIES
 const express = require('express');
-
-// SERVER
 const server = express();
 
 // MIDDLEWARE
-const configureMiddleware = require('./middleware/middleware');
+const configureMiddleware = require('./middleware/serverMiddleware');
 
 configureMiddleware(server);
 
 // ROUTES
 const exampleRoutes = require('./routes/exampleRoutes.js');
+const userRoutes = require('./routes/userRoutes.js');
 
 server.use('/api/example', exampleRoutes);
+server.use('/api/users', userRoutes);
 
 // PORT
 const port = 5000;
