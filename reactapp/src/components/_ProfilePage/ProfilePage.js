@@ -8,13 +8,16 @@ The start of the ProfilePage component
 */
 
 import React, { Component } from 'react'
+// import { connect } from 'react-redux'; // uncomment when redux is in place
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+// import { editProfile, getProfile } from '../../actions/index' // Uncomment once redux is in place
+// import { connect } from 'react-redux'; // uncomment once redux is implemented
 
 // TestParentComponent built to pass props to ProfilePage
 export default class TestParentComponent extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = { // test user
       name: 'Aklutch90001',
       location: 'Los Angeles, California',
@@ -23,55 +26,95 @@ export default class TestParentComponent extends Component {
       auth: true,
       profileID: this.props.match.params.id,
       userID: "1"
-    }
-  }
+    };
+  };
   render() {
     return (
       <ProfilePage user={this.state} />
-    )
-  }
-}
+    );
+  };
+};
 
 class ProfilePage extends Component {
+  componentDidMount() {
+    // this.props.fetchNotes(); //
+  };
   render() {
     return (
       <ProfilePageWrapper>
-        <ProfileInfo>
-          {/* Loads profile image from props */}
-          <ProfileImg src={this.props.user.profileImage} />
-          <ProfileBio>
-            <ProfileStats><ProfileStat>Username</ProfileStat>: {this.props.user.name}</ProfileStats>
-            <ProfileStats><ProfileStat>Location</ProfileStat>: {this.props.user.location}</ProfileStats>
-            <ProfileStats><ProfileStat>Activities</ProfileStat>: {this.props.user.bio}</ProfileStats>
-          </ProfileBio>
-        </ProfileInfo>
-        {/* Conditional that checks if this.props.user.auth is true then shows buttons */}
-        {this.props.user.auth &&
-          <AuthInterface>
-            <ProfileButton>Message</ProfileButton>
-            <ProfileButton>Follow</ProfileButton>
-            {/* Conditional that checks if the this.props.user.userID is equal to this.props.user.profileID
+
+        {/* Checks if axios call is getting the user information */}
+        {this.props.gettingUser || this.props.error ? (
+
+          <React.Fragment>
+            <ProfileInfo>
+              {/* Loads profile image from props */}
+              <ProfileImg src={this.props.user.profileImage} />
+              <ProfileBio>
+                {/* Displays error if error occured or Loading Message */}
+                <ProfileStats>{this.props.error ? this.props.error : `Loading User`}</ProfileStats>
+              </ProfileBio>
+            </ProfileInfo>
+            {/* Conditional that checks if this.props.user.auth is true then shows buttons */}
+            {this.props.user.auth &&
+              <AuthInterface>
+                <ProfileButton onClick={null}>Message</ProfileButton>
+                <ProfileButton>Follow</ProfileButton>
+                {/* Conditional that checks if the this.props.user.userID is equal to this.props.user.profileID
+        then displays update profile button if true. */}
+                {this.props.user.userID === this.props.user.profileID && <ProfileButton>Update Profile</ProfileButton>}
+              </AuthInterface>
+            }
+          </React.Fragment>
+
+        ) : (
+
+            <React.Fragment>
+
+              <ProfileInfo>
+                {/* Loads profile image from props */}
+                <ProfileImg src={this.props.user.profileImage} />
+                <ProfileBio>
+
+                  <ProfileStats><ProfileStat>Username</ProfileStat>: {this.props.user.name ? this.props.user.name : `error`}</ProfileStats>
+                  <ProfileStats><ProfileStat>Location</ProfileStat>: {this.props.user.location ? this.props.user.location : `error`}</ProfileStats>
+                  <ProfileStats><ProfileStat>Activities</ProfileStat>: {this.props.user.bio ? this.props.user.bio : `error`}</ProfileStats>
+
+                </ProfileBio>
+              </ProfileInfo>
+              {/* Conditional that checks if this.props.user.auth is true then shows buttons */}
+              {this.props.user.auth &&
+                <AuthInterface>
+                  <ProfileButton onClick={null}>Message</ProfileButton>
+                  <ProfileButton>Follow</ProfileButton>
+                  {/* Conditional that checks if the this.props.user.userID is equal to this.props.user.profileID
             then displays update profile button if true. */}
-            {this.props.user.userID === this.props.user.profileID && <ProfileButton>Update Profile</ProfileButton>}
-          </AuthInterface>
-        }
+                  {this.props.user.userID === this.props.user.profileID && <ProfileButton>Update Profile</ProfileButton>}
+                </AuthInterface>
+              }
+
+            </React.Fragment>
+
+          )}
+        {this.props.error ? <p>{this.props.error}</p> : null}
       </ProfilePageWrapper>
-    )
-  }
-}
+    );
+  };
+};
 
 // prop-types check for sample parent component
 ProfilePage.propTypes = {
+  gettingUser: PropTypes.bool,
   name: PropTypes.string,
   location: PropTypes.string,
   bio: PropTypes.string,
   profileImage: PropTypes.string,
   auth: PropTypes.bool,
   profileID: PropTypes.string,
-  userID: PropTypes.string
+  userID: PropTypes.string,
 }
 
-// styled components
+// styled-components
 const ProfilePageWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -124,7 +167,7 @@ const AuthInterface = styled.div`
   margin: 0 20px 0 20px;
 `;
 
-const ProfileButton = styled.a`
+const ProfileButton = styled.div`
   display: flex;
   justify-content: center;
   border-radius: 3px;
@@ -135,4 +178,19 @@ const ProfileButton = styled.a`
   color: white;
   border: 2px solid white;
   font-size: 18px;
+  cursor: pointer;
 `;
+// redux related code
+// const mapStateToProps = state => ({
+//   user: state.userReducer.user,
+//   gettingUser: state.userReducer.gettingUser,
+//   error: state.userReducer.error
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   // { editProfile }
+// )(ProfilePage);
+
+
+// user = { userId, username, signupDate, avatar, location, specialty, bio }
