@@ -10,9 +10,11 @@ configureMiddleware(server);
 // ROUTES
 const exampleRoutes = require('./routes/exampleRoutes.js');
 const userRoutes = require('./routes/userRoutes.js');
+const commentRoutes = require('./routes/commentRoutes');
 
 server.use('/api/example', exampleRoutes);
 server.use('/api/users', userRoutes);
+server.use('/api/comments', commentRoutes);
 
 // PORT
 const port = 5000;
