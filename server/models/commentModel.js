@@ -13,7 +13,7 @@ function get() {
 	return db('comments');
 }
 
-function insert() {
+function insert(comment) {
 	return db('comments')
 		.insert(comment)
 		.into('comments');
