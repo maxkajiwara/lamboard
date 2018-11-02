@@ -6,10 +6,9 @@ const comments = require('../models/commentModel');
 
 // error handler
 const errHandler = require('../middleware/errorHandler');
-router.use(errHandler);
 
 // get and post comment
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
 	comments
 		.get()
 		.then(comments => {
@@ -17,11 +16,11 @@ router.get('/', (req, res) => {
 			res.status(200).json(comments);
 		})
 		.catch(err => {
-			next(['h500', err]);
+			next('h500', err);
 		});
 });
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
 	const comment = req.body;
 	comments
 		.insert(comment)
@@ -30,8 +29,9 @@ router.post('/', (req, res) => {
 			res.status(201).json(ids[0]);
 		})
 		.catch(err => {
-			next(['h500', err]);
+			next('h500', err);
 		});
 });
 
+router.use(errHandler);
 module.exports = router;
